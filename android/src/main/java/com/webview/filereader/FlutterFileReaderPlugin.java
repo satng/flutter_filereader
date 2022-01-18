@@ -22,47 +22,16 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 /**
  * FlutterX5Plugin
  */
-public class FlutterFileReaderPlugin implements MethodChannel.MethodCallHandler, FlutterPlugin, ActivityAware {
+public class FlutterFileReaderPlugin implements FlutterPlugin {
 
     public static final String channelName = "wv.io/FileReader";
     private Context ctx;
-    private MethodChannel methodChannel;
-    private FlutterPluginBinding pluginBinding;
 
 
     private void init(Context context, BinaryMessenger messenger) {
         ctx = context;
-        methodChannel = new MethodChannel(messenger, channelName);
-        methodChannel.setMethodCallHandler(this);
     }
 
-    public FlutterFileReaderPlugin() {
-
-    }
-
-    private void onDestory() {
-
-        ctx = null;
-        methodChannel = null;
-        pluginBinding = null;
-    }
-
-
-    /**
-     * Plugin registration.
-     */
-    public static void registerWith(Registrar registrar) {
-        FlutterFileReaderPlugin plugin = new FlutterFileReaderPlugin();
-        plugin.init(registrar.context(), registrar.messenger());
-    }
-
-
-    public void netBroadcastRegister(final Context context) {
-        //实例化IntentFilter对象
-        IntentFilter filter = new IntentFilter();
-        filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-
-    }
 
 }
 
