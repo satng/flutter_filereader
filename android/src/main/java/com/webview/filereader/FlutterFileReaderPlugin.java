@@ -46,10 +46,7 @@ public class FlutterFileReaderPlugin implements MethodChannel.MethodCallHandler,
 
     private void onDestory() {
 
-        preInitCallback = null;
         ctx = null;
-        mainHandler.removeCallbacksAndMessages(null);
-        mainHandler = null;
         methodChannel = null;
         pluginBinding = null;
     }
