@@ -7,10 +7,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-import com.tencent.smtt.export.external.TbsCoreSettings;
-import com.tencent.smtt.sdk.QbSdk;
-import com.tencent.smtt.sdk.TbsListener;
-import com.tencent.smtt.sdk.ValueCallback;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
